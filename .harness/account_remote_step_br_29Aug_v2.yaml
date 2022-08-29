@@ -1,0 +1,17 @@
+template:
+  name: "account remote step br 29Aug "
+  identifier: account_remote_step_br_29Aug
+  type: Step
+  tags: {}
+  spec:
+    type: HarnessApproval
+    timeout: 1d
+    spec:
+      approvalMessage: <+input>
+      includePipelineExecutionHistory: true
+      approvers:
+        userGroups: <+input>
+        minimumCount: <+input>
+        disallowPipelineExecutor: false
+      approverInputs: []
+  versionLabel: v2
