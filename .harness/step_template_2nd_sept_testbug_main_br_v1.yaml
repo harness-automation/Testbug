@@ -1,0 +1,19 @@
+template:
+  name: step template 2nd sept testbug main br
+  identifier: step_template_2nd_sept_testbug_main_br
+  versionLabel: v1
+  type: Step
+  projectIdentifier: AmitTest
+  orgIdentifier: GitXOrg
+  tags: {}
+  spec:
+    type: HarnessApproval
+    timeout: 1d
+    spec:
+      approvalMessage: Please review the following information and approve the pipeline progression
+      includePipelineExecutionHistory: true
+      approvers:
+        userGroups: <+input>
+        minimumCount: 1
+        disallowPipelineExecutor: false
+      approverInputs: []
