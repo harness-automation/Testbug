@@ -1,0 +1,17 @@
+template:
+  name: Step PR 2nd sept
+  identifier: Step_PR_2nd_sept
+  versionLabel: v1
+  type: Step
+  tags: {}
+  spec:
+    type: HarnessApproval
+    timeout: 1d
+    spec:
+      approvalMessage: Please review the following information and approve the pipeline progression
+      includePipelineExecutionHistory: true
+      approvers:
+        userGroups: <+input>
+        minimumCount: <+input>
+        disallowPipelineExecutor: false
+      approverInputs: []
