@@ -1,0 +1,22 @@
+pipeline:
+  name: remoteTemplate
+  identifier: remoteTemplate
+  projectIdentifier: AmitTest
+  orgIdentifier: GitXOrg
+  tags: {}
+  stages:
+    - stage:
+        name: A1
+        identifier: A1
+        description: ""
+        type: Approval
+        spec:
+          execution:
+            steps:
+              - step:
+                  name: a3
+                  identifier: a3
+                  template:
+                    templateRef: qq
+                    versionLabel: q
+        tags: {}
