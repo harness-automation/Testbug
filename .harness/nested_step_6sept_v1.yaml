@@ -1,0 +1,17 @@
+template:
+  name: nested step 6sept
+  identifier: nested_step_6sept
+  versionLabel: v1
+  type: Step
+  tags: {}
+  spec:
+    type: HarnessApproval
+    timeout: 1d
+    spec:
+      approvalMessage: Please review the following information and approve the pipeline progression
+      includePipelineExecutionHistory: true
+      approvers:
+        userGroups: <+input>
+        minimumCount: <+input>
+        disallowPipelineExecutor: false
+      approverInputs: []
