@@ -10,7 +10,7 @@ template:
     spec:
       includePipelineExecutionHistory: true
       approvers:
-        userGroups: <+input>
+        userGroups:<+input>
         disallowPipelineExecutor: false
         minimumCount: <+input>
       approverInputs: []
