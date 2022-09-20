@@ -1,0 +1,17 @@
+template:
+  name: RemoteAmit
+  identifier: RemoteAmit
+  versionLabel: v1
+  type: Step
+  tags: {}
+  spec:
+    type: HarnessApproval
+    timeout: <+input>
+    spec:
+      includePipelineExecutionHistory: true
+      approvers:
+        userGroups: <+input>
+        minimumCount: <+input>
+        disallowPipelineExecutor: false
+      approverInputs: []
+      approvalMessage: created now
