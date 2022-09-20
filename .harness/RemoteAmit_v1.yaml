@@ -11,7 +11,7 @@ template:
       includePipelineExecutionHistory: true
       approvers:
         userGroups: <+input>
-        minimumCount: <+input>
+        minimumCount: 1
         disallowPipelineExecutor: false
       approverInputs: []
       approvalMessage: created now
