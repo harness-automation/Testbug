@@ -1,0 +1,24 @@
+template:
+  name: StageDefaultR2
+  identifier: StageDefaultR2
+  versionLabel: v2
+  type: Stage
+  projectIdentifier: AmitTest
+  orgIdentifier: default
+  tags: {}
+  spec:
+    type: Approval
+    spec:
+      execution:
+        steps:
+          - step:
+              name: asdd
+              identifier: asdd
+              template:
+                templateRef: StepDefault22Sept
+                versionLabel: v1
+                templateInputs:
+                  type: HarnessApproval
+                  spec:
+                    approvers:
+                      userGroups: <+input>
