@@ -1,0 +1,27 @@
+pipeline:
+  name: automationqqw
+  identifier: automationqqw
+  projectIdentifier: SimplifiedGitSync_Do_Not_Delete
+  orgIdentifier: Simlified_Git_sync
+  tags: {}
+  stages:
+    - stage:
+        name: sdsds
+        identifier: sdsds
+        description: ""
+        type: Approval
+        spec:
+          execution:
+            steps:
+              - step:
+                  name: asdw
+                  identifier: asdw
+                  template:
+                    templateRef: account.pl_auto_template_NTDBK
+                    versionLabel: v3
+                    templateInputs:
+                      type: HarnessApproval
+                      spec:
+                        approvers:
+                          userGroups: <+input>
+        tags: {}
