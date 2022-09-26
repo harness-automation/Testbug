@@ -1,0 +1,22 @@
+template:
+  name: STage456
+  identifier: STage456
+  versionLabel: v2
+  type: Stage
+  tags: {}
+  spec:
+    type: Approval
+    spec:
+      execution:
+        steps:
+          - step:
+              name: asdfe
+              identifier: asdfe
+              template:
+                templateRef: account.Step321
+                versionLabel: v1
+                templateInputs:
+                  type: HarnessApproval
+                  spec:
+                    approvers:
+                      userGroups: <+input>
