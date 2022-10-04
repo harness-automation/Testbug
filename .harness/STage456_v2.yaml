@@ -10,7 +10,7 @@ template:
       execution:
         steps:
           - step:
-              name: asdfe
+              name: as233
               identifier: asdfe
               template:
                 templateRef: account.Step321
