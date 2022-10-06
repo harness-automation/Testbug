@@ -1,0 +1,22 @@
+pipeline:
+  name: After git sync
+  identifier: After_git_sync
+  projectIdentifier: TestGitSyncMigration
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: A23
+        identifier: A23
+        description: ""
+        type: Approval
+        spec:
+          execution:
+            steps:
+              - step:
+                  name: aswe3
+                  identifier: aswe3
+                  template:
+                    templateRef: Step4566
+                    versionLabel: v2
+        tags: {}
