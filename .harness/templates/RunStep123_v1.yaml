@@ -1,0 +1,14 @@
+template:
+  name: RunStep123
+  type: Step
+  projectIdentifier: TestGitSyncMigration
+  orgIdentifier: default
+  spec:
+    type: Run
+    spec:
+      connectorRef: account.TestDockerPiyush
+      image: "123"
+      shell: Sh
+      command: echo 'amit'
+  identifier: RunStep123
+  versionLabel: v1
