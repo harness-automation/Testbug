@@ -1,0 +1,31 @@
+pipeline:
+  name: piper567
+  identifier: piper567
+  projectIdentifier: GitTest456
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: Ad345
+        identifier: Ad345
+        description: ""
+        type: Approval
+        spec:
+          execution:
+            steps:
+              - step:
+                  name: Awe34
+                  identifier: Awe34
+                  type: HarnessApproval
+                  timeout: 1d
+                  spec:
+                    approvalMessage: |-
+                      Please review the following information
+                      and approve the pipeline progression
+                    includePipelineExecutionHistory: true
+                    approvers:
+                      minimumCount: 1
+                      disallowPipelineExecutor: false
+                      userGroups: <+input>
+                    approverInputs: []
+        tags: {}
