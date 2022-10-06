@@ -1,0 +1,23 @@
+inputSet:
+  identifier: "inp3456"
+  name: "inp3456"
+  orgIdentifier: "default"
+  projectIdentifier: "ProdMigration"
+  pipeline:
+    identifier: "Before_git_sync_enable"
+    stages:
+    - stage:
+        identifier: "A1"
+        template:
+          templateInputs:
+            type: "Approval"
+            spec:
+              execution:
+                steps:
+                - step:
+                    identifier: "A2"
+                    type: "HarnessApproval"
+                    spec:
+                      approvers:
+                        userGroups:
+                        - "account._account_all_users"
