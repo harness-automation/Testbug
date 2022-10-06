@@ -1,6 +1,7 @@
 inputSet:
   identifier: "inp3456"
   name: "inp3456"
+  tags: {}
   orgIdentifier: "default"
   projectIdentifier: "ProdMigration"
   pipeline:
