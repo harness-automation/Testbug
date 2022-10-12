@@ -1,0 +1,24 @@
+template:
+  name: RemoteStage2
+  identifier: RemoteStage2
+  versionLabel: v1
+  type: Stage
+  tags: {}
+  spec:
+    type: Custom
+    spec:
+      execution:
+        steps:
+          - step:
+              name: f54
+              identifier: f54
+              template:
+                templateRef: account.RemoteStep2
+                versionLabel: v1
+                templateInputs:
+                  type: ShellScript
+                  spec:
+                    source:
+                      type: Inline
+                      spec:
+                        script: <+input>
