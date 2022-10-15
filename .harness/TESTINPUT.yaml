@@ -20,4 +20,4 @@ inputSet:
                     primary:
                       type: "DockerRegistry"
                       spec:
-                        tag: "test-2"
+                        tag: "<+trigger.artifact.build>"
