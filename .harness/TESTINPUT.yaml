@@ -1,6 +1,7 @@
 inputSet:
   identifier: "TESTINPUT"
   name: "TEST-INPUT"
+  tags: {}
   orgIdentifier: "default"
   projectIdentifier: "Kapil"
   pipeline:
@@ -19,4 +20,4 @@ inputSet:
                     primary:
                       type: "DockerRegistry"
                       spec:
-                        tag: "dfdasfasdf"
+                        tag: "test-2"
