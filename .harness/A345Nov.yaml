@@ -1,6 +1,7 @@
 inputSet:
   identifier: "A345Nov"
   name: "A345Nov"
+  tags: {}
   orgIdentifier: "default"
   projectIdentifier: "AmitTest"
   pipeline:
@@ -23,7 +24,7 @@ inputSet:
                           source:
                             type: "Inline"
                             spec:
-                              script: "'hello'"
+                              script: "echo 'hello'"
     - stage:
         identifier: "A1"
         type: "Custom"
@@ -39,4 +40,4 @@ inputSet:
                       source:
                         type: "Inline"
                         spec:
-                          script: "'hello1'"
+                          script: "echo 'hello1'"
