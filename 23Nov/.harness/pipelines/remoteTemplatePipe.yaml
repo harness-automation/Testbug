@@ -14,7 +14,7 @@ pipeline:
     - stage:
         name: abc
         identifier: abc
-        description: "23"
+        description: "23456"
         type: Custom
         spec:
           execution:
