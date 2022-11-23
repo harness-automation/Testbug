@@ -29,7 +29,7 @@ pipeline:
     - stage:
         name: A1
         identifier: A1
-        description: ""
+        description: "updated"
         type: Custom
         spec:
           execution:
