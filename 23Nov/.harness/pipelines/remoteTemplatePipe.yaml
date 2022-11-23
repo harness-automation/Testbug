@@ -1,0 +1,36 @@
+pipeline:
+  name: remoteTemplatePipe
+  identifier: remoteTemplatePipe
+  projectIdentifier: check23
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: eaa
+        identifier: eaa
+        template:
+          templateRef: StageTemplate
+          versionLabel: v1
+    - stage:
+        name: abc
+        identifier: abc
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: Shell Script
+                  identifier: ShellScript
+                  spec:
+                    shell: Bash
+                    onDelegate: true
+                    source:
+                      type: Inline
+                      spec:
+                        script: <+input>
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 10m
+        tags: {}
