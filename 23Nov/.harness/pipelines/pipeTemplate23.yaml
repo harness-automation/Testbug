@@ -1,0 +1,24 @@
+pipeline:
+  name: pipeTemplate23
+  identifier: pipeTemplate23
+  projectIdentifier: check23
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: eww
+        identifier: eww
+        template:
+          templateRef: account.InlineStage
+          versionLabel: v1
+          templateInputs:
+            type: Approval
+            spec:
+              execution:
+                steps:
+                  - step:
+                      identifier: A2
+                      type: HarnessApproval
+                      spec:
+                        approvers:
+                          userGroups: <+input>
