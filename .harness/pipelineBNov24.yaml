@@ -132,6 +132,26 @@ pipeline:
                     value: <+input>.allowedValues(dev,infra-eu)
                 when:
                   condition: <+input>
+    - stage:
+        name: A34
+        identifier: A34
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  name: gghh
+                  identifier: gghh
+                  template:
+                    templateRef: account.inlineStep45
+                    versionLabel: v2
+                    templateInputs:
+                      type: HarnessApproval
+                      spec:
+                        approvers:
+                          userGroups: <+input>
+        tags: {}
   properties:
     ci:
       codebase:
