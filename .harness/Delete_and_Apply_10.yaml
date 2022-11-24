@@ -1,0 +1,98 @@
+template:
+  name: Delete and Apply
+  identifier: Delete_and_Apply
+  versionLabel: "1.0"
+  type: Stage
+  projectIdentifier: TractableTest
+  orgIdentifier: default
+  spec:
+    type: Deployment
+    spec:
+      serviceConfig:
+        serviceRef: <+input>
+        serviceDefinition:
+          spec:
+            variables: []
+            manifests:
+              - manifest:
+                  identifier: k8s
+                  type: Kustomize
+                  spec:
+                    store:
+                      type: Github
+                      spec:
+                        connectorRef: account.GithubConnectorV2
+                        gitFetchType: Branch
+                        folderPath: <+stage.variables.MANIFEST>
+                        repoName: developer-portal-backstage
+                        branch: <+stage.variables.BRANCH>
+                    pluginPath: ""
+                    skipResourceVersioning: false
+              - manifest:
+                  identifier: harness
+                  type: KustomizePatches
+                  spec:
+                    store:
+                      type: Github
+                      spec:
+                        connectorRef: account.GithubConnectorV2
+                        gitFetchType: Branch
+                        paths:
+                          - kubernetes/harness/artifact-patch.yaml
+                        repoName: developer-portal-backstage
+                        branch: <+stage.variables.BRANCH>
+            artifacts:
+              primary:
+                spec:
+                  connectorRef: account.Tractable_Docker_Hub
+                  imagePath: <+input>
+                  tag: <+input>
+                type: DockerRegistry
+          type: Kubernetes
+      infrastructure:
+        environmentRef: <+input>
+        infrastructureDefinition:
+          type: KubernetesDirect
+          spec:
+            connectorRef: <+input>
+            namespace: harness-delegate
+            releaseName: release-<+INFRA_KEY>
+        allowSimultaneousDeployments: false
+      execution:
+        steps:
+          - step:
+              type: K8sDelete
+              name: Remove resources
+              identifier: Remove_resources
+              spec:
+                deleteResources:
+                  type: ManifestPath
+                  spec:
+                    manifestPaths:
+                      - <+stage.variables.MANIFEST>
+              timeout: 10m
+          - step:
+              type: K8sRollingDeploy
+              name: Deploy
+              identifier: Deploy
+              spec:
+                skipDryRun: false
+              timeout: 10m
+        rollbackSteps: []
+      serviceDependencies: []
+    failureStrategies:
+      - onFailure:
+          errors:
+            - AllErrors
+          action:
+            type: StageRollback
+    variables:
+      - name: BRANCH
+        type: String
+        value: <+input>
+      - name: MANIFEST
+        type: String
+        value: <+input>
+    when:
+      pipelineStatus: Success
+      condition: <+input>
