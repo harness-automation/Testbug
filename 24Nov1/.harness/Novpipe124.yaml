@@ -1,0 +1,30 @@
+pipeline:
+  name: Novpipe124
+  identifier: Novpipe124
+  projectIdentifier: Amit24Nov
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: A34
+        identifier: A34
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: Shell Script1
+                  identifier: Shell_Script1
+                  spec:
+                    shell: Bash
+                    onDelegate: true
+                    source:
+                      type: Inline
+                      spec:
+                        script: <+input>
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 10m
+        tags: {}
