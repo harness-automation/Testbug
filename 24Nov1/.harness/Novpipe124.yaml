@@ -8,7 +8,7 @@ pipeline:
     - stage:
         name: A34
         identifier: A34
-        description: ""
+        description: "hello"
         type: Custom
         spec:
           execution:
