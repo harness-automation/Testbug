@@ -1,0 +1,13 @@
+connector:
+  name: 24NovConnector
+  identifier: NovConnector
+  description: ""
+  orgIdentifier: default
+  projectIdentifier: check23
+  type: DockerRegistry
+  spec:
+    dockerRegistryUrl: https://www.abc.com
+    providerType: DockerHub
+    auth:
+      type: Anonymous
+    executeOnDelegate: true
