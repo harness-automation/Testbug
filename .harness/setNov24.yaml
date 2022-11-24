@@ -1,0 +1,58 @@
+inputSet:
+  identifier: "setNov24"
+  name: "setNov24"
+  orgIdentifier: "default"
+  projectIdentifier: "AmitTest"
+  pipeline:
+    identifier: "pipe23Nov"
+    stages:
+    - stage:
+        identifier: "A34"
+        template:
+          templateInputs:
+            type: "Custom"
+            spec:
+              execution:
+                steps:
+                - step:
+                    identifier: "A34"
+                    template:
+                      templateInputs:
+                        type: "ShellScript"
+                        spec:
+                          source:
+                            type: "Inline"
+                            spec:
+                              script: "echo 'hi'"
+    - stage:
+        identifier: "A1"
+        type: "Custom"
+        spec:
+          execution:
+            steps:
+            - step:
+                identifier: "w3"
+                template:
+                  templateInputs:
+                    type: "ShellScript"
+                    spec:
+                      source:
+                        type: "Inline"
+                        spec:
+                          script: "echo 'hi'"
+    - stage:
+        identifier: "A345"
+        type: "Custom"
+        spec:
+          execution:
+            steps:
+            - step:
+                identifier: "ggf"
+                template:
+                  templateInputs:
+                    type: "ShellScript"
+                    spec:
+                      source:
+                        type: "Inline"
+                        spec:
+                          script: "echo 'hi'"
