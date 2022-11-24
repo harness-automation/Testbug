@@ -1,0 +1,30 @@
+pipeline:
+  name: oldpipe24Nov
+  identifier: oldpipe24Nov
+  projectIdentifier: Amit24Nov
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: A345
+        identifier: A345
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: Shell Script
+                  identifier: ShellScript
+                  spec:
+                    shell: Bash
+                    onDelegate: true
+                    source:
+                      type: Inline
+                      spec:
+                        script: <+input>
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 10m
+        tags: {}
