@@ -1,5 +1,5 @@
 pipeline:
-  name: remoteTemplatePipe
+  name: remoteTemplatePipe234
   identifier: remoteTemplatePipe
   projectIdentifier: check23
   orgIdentifier: default
