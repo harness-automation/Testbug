@@ -1,0 +1,24 @@
+pipeline:
+  name: case1Dec20
+  identifier: case1Dec20
+  projectIdentifier: SimplifiedGitSync_Do_Not_Delete
+  orgIdentifier: Simlified_Git_sync
+  tags: {}
+  stages:
+    - stage:
+        name: stage1
+        identifier: stage1
+        template:
+          templateRef: Stage20DecTemplate
+          versionLabel: "2"
+          templateInputs:
+            type: Deployment
+            spec:
+              service:
+                serviceRef: <+input>
+                serviceInputs: <+input>
+              environment:
+                environmentRef: <+input>
+                environmentInputs: <+input>
+                serviceOverrideInputs: <+input>
+                infrastructureDefinitions: <+input>
