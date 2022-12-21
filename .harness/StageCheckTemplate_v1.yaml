@@ -27,9 +27,9 @@ template:
       execution:
         steps:
           - step:
-              name: create
-              identifier: create
+              name: creatr45
+              identifier: creatr45
               template:
-                templateRef: Create_Namespace_inline
+                templateRef: Create_Namespace
                 versionLabel: 1.0.0
         rollbackSteps: []
