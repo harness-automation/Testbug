@@ -1,0 +1,35 @@
+template:
+  name: StageCheckTemplateDuplicate
+  identifier: StageCheckTemplateDuplicate
+  versionLabel: v1
+  type: Stage
+  projectIdentifier: AmitTest
+  orgIdentifier: default
+  tags: {}
+  spec:
+    type: Deployment
+    spec:
+      serviceConfig:
+        serviceRef: <+input>
+        serviceDefinition:
+          spec:
+            variables: []
+          type: Kubernetes
+      infrastructure:
+        environmentRef: <+input>
+        infrastructureDefinition:
+          type: KubernetesDirect
+          spec:
+            connectorRef: <+input>
+            namespace: <+input>
+            releaseName: release-<+INFRA_KEY>
+        allowSimultaneousDeployments: false
+      execution:
+        steps:
+          - step:
+              name: creatr45
+              identifier: creatr45
+              template:
+                templateRef: Create_Namespace8796
+                versionLabel: 1.0.0
+        rollbackSteps: []
