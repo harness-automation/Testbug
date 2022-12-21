@@ -30,6 +30,6 @@ template:
               name: creatr45
               identifier: creatr45
               template:
-                templateRef: Create_Namespace
+                templateRef: Create_Namespace8796
                 versionLabel: 1.0.0
         rollbackSteps: []
