@@ -1,0 +1,35 @@
+inputSet:
+  name: set1 feb2
+  identifier: set1_feb2
+  orgIdentifier: default
+  projectIdentifier: AmitTest
+  pipeline:
+    identifier: pipeline_1_feb_2
+    stages:
+      - stage:
+          identifier: Stage1
+          type: Custom
+          spec:
+            execution:
+              steps:
+                - step:
+                    identifier: ShellScript_1
+                    type: ShellScript
+                    spec:
+                      source:
+                        type: Inline
+                        spec:
+                          script: <+input>
+                    timeout: <+input>
+      - stage:
+          identifier: Stage2
+          type: Deployment
+          spec:
+            service:
+              serviceRef: <+input>
+              serviceInputs: <+input>
+            environment:
+              environmentRef: <+input>
+              environmentInputs: <+input>
+              serviceOverrideInputs: <+input>
+              infrastructureDefinitions: <+input>
