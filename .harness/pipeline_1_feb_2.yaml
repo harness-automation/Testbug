@@ -41,7 +41,7 @@ pipeline:
           environment:
             environmentRef: <+input>
             deployToAll: false
-            environmentInputs: qa
+            environmentInputs: <+input>
             serviceOverrideInputs: <+input>
             infrastructureDefinitions: <+input>
           execution:
