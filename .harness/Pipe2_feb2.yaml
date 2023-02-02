@@ -34,7 +34,7 @@ pipeline:
                   spec:
                     pruningEnabled: false
           environment:
-            environmentRef: <+input>
+            environmentRef: qa
             deployToAll: false
             environmentInputs: <+input>
             serviceOverrideInputs: <+input>
