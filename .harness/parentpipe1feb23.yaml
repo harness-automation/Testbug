@@ -40,3 +40,32 @@ pipeline:
         template:
           templateRef: bbTemplate
           versionLabel: v1
+    - stage:
+        name: sw
+        identifier: sw
+        description: ""
+        type: Pipeline
+        spec:
+          org: default
+          pipeline: childPipe23Feb
+          project: AmitTest
+          inputs:
+            identifier: childPipe23Feb
+            stages:
+              - stage:
+                  identifier: S12
+                  template:
+                    templateInputs:
+                      type: Custom
+                      spec:
+                        execution:
+                          steps:
+                            - step:
+                                identifier: ShellScript_1
+                                type: ShellScript
+                                spec:
+                                  source:
+                                    type: Inline
+                                    spec:
+                                      script: <+input>
+                                timeout: <+input>
