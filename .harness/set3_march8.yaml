@@ -1,0 +1,22 @@
+inputSet:
+  name: set3 march8
+  identifier: set3_march8
+  orgIdentifier: default
+  projectIdentifier: AmitTest
+  pipeline:
+    identifier: pipe2_march8
+    stages:
+      - stage:
+          identifier: s1
+          type: Custom
+          spec:
+            execution:
+              steps:
+                - step:
+                    identifier: ShellScript_1
+                    type: ShellScript
+                    spec:
+                      source:
+                        type: Inline
+                        spec:
+                          script: echo 'hi update'
