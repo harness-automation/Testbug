@@ -12,6 +12,7 @@ pipeline:
           type: Custom
           spec:
             execution:
+            
               steps:
                 - step:
                     type: ShellScript
