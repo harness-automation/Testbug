@@ -26,5 +26,5 @@ pipeline:
                         script: test
                     environmentVariables: []
                     outputVariables: []
-                  timeout: 1m
+                  timeout: 10m
         tags: {}
