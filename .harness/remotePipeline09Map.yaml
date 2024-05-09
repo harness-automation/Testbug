@@ -1,0 +1,30 @@
+pipeline:
+  name: remotePipeline09Map
+  identifier: remotePipeline09Map
+  tags: {}
+  template:
+    templateRef: pipelineTemplate09May
+    versionLabel: "1"
+    gitBranch: testtt
+    templateInputs:
+      stages:
+        - stage:
+            identifier: s12
+            template:
+              templateInputs:
+                type: Custom
+                spec:
+                  execution:
+                    steps:
+                      - step:
+                          identifier: s1
+                          template:
+                            templateInputs:
+                              type: ShellScript
+                              spec:
+                                source:
+                                  type: Inline
+                                  spec:
+                                    script: <+input>
+  projectIdentifier: AmitTest
+  orgIdentifier: Pipelines_NonK8s_Org_NG
