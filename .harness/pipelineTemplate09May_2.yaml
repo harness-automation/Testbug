@@ -1,0 +1,32 @@
+template:
+  name: pipelineTemplate09May
+  identifier: pipelineTemplate09May
+  type: Pipeline
+  projectIdentifier: AmitTest
+  orgIdentifier: Pipelines_NonK8s_Org_NG
+  tags: {}
+  spec:
+    stages:
+      - stage:
+          name: s12
+          identifier: s12
+          tags: {}
+          template:
+            templateRef: stageTemplate09May
+            versionLabel: "1"
+            templateInputs:
+              type: Custom
+              spec:
+                execution:
+                  steps:
+                    - step:
+                        identifier: s1
+                        template:
+                          templateInputs:
+                            type: ShellScript
+                            spec:
+                              source:
+                                type: Inline
+                                spec:
+                                  script: <+input>
+  versionLabel: "2"
