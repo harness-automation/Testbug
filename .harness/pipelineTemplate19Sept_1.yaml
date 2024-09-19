@@ -34,10 +34,10 @@ template:
               variables:
                 - name: var2
                   type: String
-                  value: <+input>.selectOneFrom(v1,v2,v3)
+                  value: "<+input>.allowedValues(v1,v2,v3)"
                 - name: var3
                   type: String
-                  value: <+input>.allowedValues(v3,v4,v5)
+                  value: "<+input>.selectOneFrom(v3,v4,v5)"
       - stage:
           name: s3
           identifier: s3
@@ -80,12 +80,12 @@ template:
               type: String
               description: ""
               required: false
-              value: <+input>.allowedValues(v6,v7)
+              value: "<+input>.allowedValues(v6,v7)"
             - name: var5
               type: String
               description: ""
               required: false
-              value: <+input>.selectOneFrom(v8,v9)
+              value: "<+input>.selectOneFrom(v8,v9)"
           failureStrategies:
             - onFailure:
                 errors:
