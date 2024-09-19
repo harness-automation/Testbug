@@ -86,3 +86,9 @@ template:
               description: ""
               required: false
               value: <+input>.selectOneFrom(v8,v9)
+          failureStrategies:
+            - onFailure:
+                errors:
+                  - AllErrors
+                action:
+                  type: MarkAsSuccess
