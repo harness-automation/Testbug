@@ -1,0 +1,18 @@
+pipeline:
+  name: parentPipeline
+  identifier: parentPipeline
+  projectIdentifier: AmitTest
+  orgIdentifier: Pipelines_NonK8s_Org_NG
+  tags: {}
+  stages:
+    - stage:
+        name: s23
+        identifier: s23
+        description: ""
+        type: Pipeline
+        spec:
+          org: Pipelines_NonK8s_Org_NG
+          pipeline: ChildRemoteNonDefault
+          project: AmitTest
+          inputSetReferences:
+            - inputSetp19
