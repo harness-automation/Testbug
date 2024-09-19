@@ -16,3 +16,14 @@ pipeline:
           project: AmitTest
           inputSetReferences:
             - inputSetp19
+    - stage:
+        name: s44
+        identifier: s44
+        description: ""
+        type: Pipeline
+        spec:
+          org: Pipelines_NonK8s_Org_NG
+          pipeline: ChildNonDefaultBranchPipe19Sept
+          project: AmitTest
+          inputSetReferences:
+            - inputSetSpet19Set1
