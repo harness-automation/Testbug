@@ -34,10 +34,10 @@ template:
               variables:
                 - name: var2
                   type: String
-                  value: <+input>.allowedValues(v1,v2,v3)
+                  value: <+input>.selectOneFrom(v1,v2,v3)
                 - name: var3
                   type: String
-                  value: <+input>.selectOneFrom(v3,v4,v5)
+                  value: <+input>.allowedValues(v3,v4,v5)
       - stage:
           name: s3
           identifier: s3
