@@ -1,0 +1,14 @@
+pipeline:
+  name: cypress_pipeline_Mark_Schmitt
+  identifier: cypress_pipeline_Mark_Schmitt
+  projectIdentifier: cypress_project_Chen_Hughes
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: cypress_stage_Evgeniy_Wanjiku
+        identifier: cypress_stage_Evgeniy_Wanjiku
+        template:
+          templateRef: cypress_template_Chao_Wagner
+          versionLabel: v1
+          gitBranch: main

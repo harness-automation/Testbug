@@ -1,0 +1,56 @@
+inputSet:
+  name: inputset1feb23
+  identifier: inputset1feb23
+  orgIdentifier: default
+  projectIdentifier: AmitTest
+  pipeline:
+    identifier: parentpipe1feb23
+    stages:
+      - stage:
+          identifier: S12
+          type: Pipeline
+          spec:
+            inputs:
+              identifier: childPipe23Feb
+              stages:
+                - stage:
+                    identifier: S12
+                    template:
+                      templateInputs:
+                        type: Custom
+                        spec:
+                          execution:
+                            steps:
+                              - step:
+                                  identifier: ShellScript_1
+                                  type: ShellScript
+                                  spec:
+                                    source:
+                                      type: Inline
+                                      spec:
+                                        script: echo 'ho'
+                                  timeout: 5m
+      - stage:
+          identifier: sw
+          type: Pipeline
+          spec:
+            inputs:
+              identifier: childPipe23Feb
+              stages:
+                - stage:
+                    identifier: S12
+                    template:
+                      templateInputs:
+                        type: Custom
+                        spec:
+                          execution:
+                            steps:
+                              - step:
+                                  identifier: ShellScript_1
+                                  type: ShellScript
+                                  spec:
+                                    source:
+                                      type: Inline
+                                      spec:
+                                        script: echo 'ho'
+                                  timeout: 5m
