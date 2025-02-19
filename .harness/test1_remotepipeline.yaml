@@ -46,3 +46,4 @@ pipeline:
                 - AllErrors
               action:
                 type: StageRollback
+        timeout: 10s
