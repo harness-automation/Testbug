@@ -37,6 +37,13 @@ pipeline:
                   template:
                     templateRef: account.testvgb
                     versionLabel: v1
+                    templateInputs:
+                      type: ShellScript
+                      spec:
+                        source:
+                          type: Inline
+                          spec:
+                            script: <+input>
             rollbackSteps:
               - step:
                   name: Rollback Rollout Deployment
