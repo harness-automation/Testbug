@@ -31,6 +31,12 @@ pipeline:
                   spec:
                     skipDryRun: false
                     pruningEnabled: false
+              - step:
+                  name: step11
+                  identifier: step11
+                  template:
+                    templateRef: account.testvgb
+                    versionLabel: v1
             rollbackSteps:
               - step:
                   name: Rollback Rollout Deployment
