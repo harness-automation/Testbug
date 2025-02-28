@@ -3,3 +3,21 @@ service:
   identifier: service228Feb2025
   orgIdentifier: Pipelines_NonK8s_Org_NG
   projectIdentifier: AmitTest
+  serviceDefinition:
+    spec:
+      release:
+        name: release-<+INFRA_KEY_SHORT_ID>
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - name: t1
+              identifier: t1
+              template:
+                templateRef: bugbash_artifact_template
+                versionLabel: v1
+                templateInputs:
+                  type: GoogleArtifactRegistry
+                  spec:
+                    version: <+input>
+    type: Kubernetes
