@@ -1,0 +1,32 @@
+inputSet:
+  name: bugbash-1InputSet-28Feb
+  identifier: bugbash1InputSet28Feb
+  orgIdentifier: Pipelines_NonK8s_Org_NG
+  projectIdentifier: AmitTest
+  pipeline:
+    identifier: bugBash28Feb2024
+    stages:
+      - stage:
+          identifier: s1
+          type: Deployment
+          spec:
+            service:
+              serviceRef: service228Feb2025
+              serviceInputs:
+                serviceDefinition:
+                  type: Kubernetes
+                  spec:
+                    artifacts:
+                      primary:
+                        primaryArtifactRef: t1
+                        sources:
+                          - identifier: t1
+                            template:
+                              templateInputs:
+                                type: GoogleArtifactRegistry
+                                spec:
+                                  version: old
+              gitBranch: main-patch
+            environment:
+              environmentRef: RemoteEnv28Feb2025same_repo_and_branch
+              gitBranch: testtt
