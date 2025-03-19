@@ -1,0 +1,13 @@
+pipeline:
+  name: pipe1 21march
+  identifier: pipe1_21march
+  projectIdentifier: AmitTest
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: S1
+        identifier: S1
+        template:
+          templateRef: stage1_march10
+          versionLabel: "1"

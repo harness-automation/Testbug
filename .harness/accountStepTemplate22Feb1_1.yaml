@@ -1,0 +1,19 @@
+template:
+  name: accountStepTemplate22Feb-1
+  identifier: accountStepTemplate22Feb1
+  versionLabel: "1"
+  type: Step
+  tags: {}
+  spec:
+    timeout: 10m
+    type: ShellScript
+    spec:
+      shell: Bash
+      executionTarget: {}
+      delegateSelectors: []
+      source:
+        type: Inline
+        spec:
+          script: echo 'test step12'
+      environmentVariables: []
+      outputVariables: []

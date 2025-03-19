@@ -1,0 +1,71 @@
+pipeline:
+  name: parentpipe1feb23
+  identifier: parentpipe1feb23
+  projectIdentifier: AmitTest
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: S12
+        identifier: S12
+        description: ""
+        type: Pipeline
+        spec:
+          org: default
+          pipeline: childPipe23Feb
+          project: AmitTest
+          inputs:
+            identifier: childPipe23Feb
+            stages:
+              - stage:
+                  identifier: S12
+                  template:
+                    templateInputs:
+                      type: Custom
+                      spec:
+                        execution:
+                          steps:
+                            - step:
+                                identifier: ShellScript_1
+                                type: ShellScript
+                                spec:
+                                  source:
+                                    type: Inline
+                                    spec:
+                                      script: <+input>
+                                timeout: <+input>
+    - stage:
+        name: swe
+        identifier: swe
+        template:
+          templateRef: bbTemplate
+          versionLabel: v1
+    - stage:
+        name: sw
+        identifier: sw
+        description: ""
+        type: Pipeline
+        spec:
+          org: default
+          pipeline: childPipe23Feb
+          project: AmitTest
+          inputs:
+            identifier: childPipe23Feb
+            stages:
+              - stage:
+                  identifier: S12
+                  template:
+                    templateInputs:
+                      type: Custom
+                      spec:
+                        execution:
+                          steps:
+                            - step:
+                                identifier: ShellScript_1
+                                type: ShellScript
+                                spec:
+                                  source:
+                                    type: Inline
+                                    spec:
+                                      script: <+input>
+                                timeout: <+input>

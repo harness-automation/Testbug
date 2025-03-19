@@ -1,0 +1,16 @@
+template:
+  name: stepTemplate123
+  identifier: stepTemplate123
+  type: Step
+  projectIdentifier: TestAmit
+  orgIdentifier: default
+  tags: {}
+  spec:
+    timeout: 12m
+    type: K8sDelete
+    spec:
+      deleteResources:
+        type: ResourceName
+        spec:
+          resourceNames: <+input>
+  versionLabel: "2"
