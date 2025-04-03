@@ -19,35 +19,6 @@ template:
               type: FetchInstanceScript
               timeout: 10m
               spec: {}
-          - step:
-              type: ShellScript
-              name: validate-inputs
-              identifier: validateinputs
-              spec:
-                shell: Bash
-                executionTarget: {}
-                source:
-                  type: Inline
-                  spec:
-                    script: |
-                      # Validate input variables
-
-                      if [ -z "$MANIFEST_ID" ]; then
-                        echo "Error: MANIFEST_ID variable is not set."
-                        exit 1
-                      fi
-                environmentVariables:
-                  - name: MANIFEST_ID
-                    type: String
-                    value: <+artifact.tag>
-                outputVariables: []
-              timeout: 10m
-              failureStrategies:
-                - onFailure:
-                    errors:
-                      - AllErrors
-                    action:
-                      type: Abort
         rollbackSteps: []
       environment:
         environmentRef: <+input>
