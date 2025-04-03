@@ -32,22 +32,6 @@ template:
             - AllErrors
           action:
             type: StageRollback
-    variables:
-      - name: deploy_strategy
-        type: String
-        description: ""
-        required: true
-        value: <+input>.default(<+pipeline.variables.deploy_strategy>)
-      - name: activation_strategy
-        type: String
-        description: ""
-        required: true
-        value: <+input>.default(<+pipeline.variables.activation_strategy>)
-      - name: approval_user_group
-        type: String
-        description: ""
-        required: false
-        value: <+pipeline.variables.approval_user_group>
     when:
       pipelineStatus: Success
   description: ""
