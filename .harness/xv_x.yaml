@@ -54,32 +54,6 @@ template:
               steps:
                 - step:
                     type: Run
-                    spec:
-                      connectorRef: account.pypldockerhub
-                      image: dockerhub.paypalcorp.com/developerexperience-r/relactions-cli:1.4.9_202412021556
-                      shell: Sh
-                      command: |-
-                        sudo apt-get update
-                        sudo apt-get install jq -y
-                        relactions login --auth-schema sso_hrz --username ${RE_SSOHRZ_USERNAME} --password ${RE_SSOHRZ_PASSWORD} --client-id ${RE_SSOHRZ_CLIENT_ID} --client-secret ${RE_SSOHRZ_CLIENT_SECRET} --file-name ./login-sso-hrz.json
-                        SSO_HRZ_TOKEN=$(jq -r '.results[0].session_id' login-sso-hrz.json)
-                      envVariables:
-                        RE_SSOHRZ_USERNAME: <+secrets.getValue("account.hashicorpvault://dpevault/harness/dpe/relactions#RE_SSOHRZ_USERNAME")>
-                        RE_SSOHRZ_PASSWORD: <+secrets.getValue("account.hashicorpvault://dpevault/harness/dpe/relactions#RE_SSOHRZ_PASSWORD")>
-                        RE_SSOHRZ_CLIENT_ID: <+secrets.getValue("account.hashicorpvault://dpevault/harness/dpe/relactions#RE_SSOHRZ_CLIENT_ID")>
-                        RE_SSOHRZ_CLIENT_SECRET: <+secrets.getValue("account.hashicorpvault://dpevault/harness/dpe/relactions#RE_SSOHRZ_CLIENT_SECRET")>
-                        RE_SSO_HRZ_HOST: engineering.paypalinc.com
-                        RE_SSO_HRZ_PATH: /relapiserv/v1/ssohrz_proxy
-                      outputVariables:
-                        - name: SSO_HRZ_TOKEN
-                          type: String
-                          value: SSO_HRZ_TOKEN
-                      imagePullPolicy: IfNotPresent
-                    timeout: 1m
-                    name: get-sso-hrz-token
-                    identifier: getssohrztoken
-                - step:
-                    type: Run
                     name: get-deploy-strategy
                     identifier: getdeploystrategy
                     spec:
