@@ -17,3 +17,9 @@ template:
               template:
                 templateRef: step21Apr20251
                 versionLabel: v1
+          - step:
+              type: Wait
+              name: Wait_1
+              identifier: Wait_1
+              spec:
+                duration: 10m
