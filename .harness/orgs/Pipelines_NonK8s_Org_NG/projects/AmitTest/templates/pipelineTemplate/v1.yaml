@@ -15,3 +15,4 @@ template:
           template:
             templateRef: stagetemplate21Apr2025
             versionLabel: v1
+            gitBranch: 21-2025Apr
