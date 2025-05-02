@@ -1,9 +1,0 @@
-overlayInputSet:
-  name: overlay6OCt
-  identifier: overlay6OCt
-  orgIdentifier: default
-  projectIdentifier: ProdMigration
-  pipelineIdentifier: Before_git_sync_enable
-  inputSetReferences:
-    - inp3456
-  tags: {}
