@@ -1,9 +1,0 @@
-pipeline:
-  name: pipelineTesting-PIPE-25007
-  identifier: pipelineTestingPIPE25007
-  tags: {}
-  template:
-    templateRef: pipelineTemplate21APr2025
-    versionLabel: v1
-  projectIdentifier: AmitTest
-  orgIdentifier: Pipelines_NonK8s_Org_NG
